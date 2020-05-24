@@ -7,10 +7,11 @@ router.get("/get-question", async (req, res) => {
 });
 
 router.post("/add-question", async (req, res) => {
+  const { question, questionGenre } = req.body;
   const newQuestion = new Question({
-    body: "Ask something?",
-    genre: "VDUD",
-    author: "Admin"
+    body: question,
+    genre: questionGenre,
+    author: "admin"
   });
 
   try {

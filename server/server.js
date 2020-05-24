@@ -4,9 +4,10 @@ const connectDB = require("./config/initDB.js");
 const getQuestion = require("./routes/getQuestion.js");
 
 const app = express();
+app.use(express.json({ extended: true }));
+app.use(cors());
 connectDB();
 
-app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
