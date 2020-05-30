@@ -36,7 +36,8 @@ const AddQuestion = () => {
       headers: {
         "Content-Type": "application/json"
       }
-    }).then(res => console.log("OK"));
+    }).then(res => console.log(question));
+    setQuestion("");
   };
 
   return (

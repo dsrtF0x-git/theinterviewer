@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Question = require("../models/Question.js");
 
-router.get("/get-question", async (req, res) => {
-  res.status(200).json({ msg: "Some question"});
+router.get("/get-questions", async (req, res) => {
+  const questions = await Question.find({});
+  return res.status(200).json(questions);
 });
 
 router.post("/add-question", async (req, res) => {
