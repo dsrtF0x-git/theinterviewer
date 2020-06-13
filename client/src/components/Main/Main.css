@@ -1,8 +1,12 @@
 .Main {
-  background-image: url("../../img/background.jpg");
+  /* background-image: url("../../img/background.jpg"); */
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   color: white;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

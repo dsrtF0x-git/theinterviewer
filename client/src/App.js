@@ -13,14 +13,14 @@ const App = () => {
   useEffect(() => {
     axios
       .get('http://localhost:5000/get-questions')
-      .then((res) => console.log(res.data));
+      .then((res) => setQuestions(res.data));
   }, []);
 
   return (
     <Router>
       <div className='container-fluid p-0 m-0 App'>
         <Header />
-        <Route exact path='/' component={Main} />
+        <Route exact path='/' render={() => <Main questions={questions} />} />
         <Switch>
           <Route exact path='/add-question' component={AddQuestion} />
           <Route exact path='/about' component={About} />
